@@ -10,7 +10,7 @@ public class MenuPrincipal {
     public static void Menu(){
 
         do{
-            System.out.println("---- Gerenciamento do Hotel ----");
+            System.out.println("\n---- Gerenciamento do Hotel ----");
             System.out.println("[1] - Gerenciamento de Hóspedes");
             System.out.println("[2] - Gerenciamento de Funcionários");
             System.out.println("[3] - Gerenciamento de Reservas");

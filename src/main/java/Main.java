@@ -7,8 +7,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-        
-        MenuPrincipal.Menu();
+
         Connection conexao = null;
         try {
         conexao = ConexaoBanco.obterConexao(); // conexão com o banco
@@ -24,7 +23,8 @@ public class Main {
         ConexaoBanco.fecharConexao(); // fecha conexão
     }   
         CriaTabela criaTabela = new CriaTabela();
-    
+        
+        MenuPrincipal.Menu();
     }
 
 }

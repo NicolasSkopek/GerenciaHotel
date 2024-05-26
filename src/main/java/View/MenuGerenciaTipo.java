@@ -13,7 +13,7 @@ public class MenuGerenciaTipo {
     public static void MenuTipo(){
 
         do{
-            System.out.println("---- Gerenciamento de Tipos de Quarto ----");
+            System.out.println("\n---- Gerenciamento de Tipos de Quarto ----");
             System.out.println("[1] - Inserir Dados do Tipo do Quarto");
             System.out.println("[2] - Atuaizar Dados do Tipo do Quarto");
             System.out.println("[3] - Excluir Dados do Tipo do Quarto");

@@ -13,7 +13,7 @@ public class MenuGerenciaHospede {
     public static void MenuHospede(){
 
         do{
-            System.out.println("---- Gerenciamento de Hóspedes ----");
+            System.out.println("\n---- Gerenciamento de Hóspedes ----");
             System.out.println("[1] - Inserir Dados do Hóspede");
             System.out.println("[2] - Atuaizar Dados do Hóspede");
             System.out.println("[3] - Excluir Dados do Hóspede");

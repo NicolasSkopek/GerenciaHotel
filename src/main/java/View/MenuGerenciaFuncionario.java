@@ -14,7 +14,7 @@ public class MenuGerenciaFuncionario {
     public static void MenuFuncionario(){
 
         do{
-            System.out.println("---- Gerenciamento de Funcionário ----");
+            System.out.println("\n---- Gerenciamento de Funcionário ----");
             System.out.println("[1] - Inserir Dados do Funcionário");
             System.out.println("[2] - Atuaizar Dados do Funcionário");
             System.out.println("[3] - Excluir Dados do Funcionário");
