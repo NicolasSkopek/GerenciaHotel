@@ -26,6 +26,7 @@ public class InserirHospede {
         
         try (Connection conexao = ConexaoBanco.obterConexao()) {
             String retorno = cadastroHospede(hospede, conexao);
+            System.out.println(retorno);
         } catch (SQLException e) {
             e.printStackTrace();
         }

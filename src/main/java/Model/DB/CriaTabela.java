@@ -49,21 +49,13 @@ public class CriaTabela {
             } else {
                 System.out.println("Tabela gerenciamento_de_quartos_da_reserva já existe.");
             }
-
-
-
-
-
-
-
-
-
             
         } catch (SQLException ex) {
             System.out.println("Ocorreu um problema ao verificar ou criar as tabelas: " + ex.getMessage());
         }
     }
     
+
     private static void criarGerenciamentoDeHospedes(Connection conexao) throws SQLException {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_hospedes(" +
@@ -71,7 +63,7 @@ public class CriaTabela {
                 "nome VARCHAR(50) NOT NULL," +
                 "telefone VARCHAR(50) NOT NULL," +
                 "email VARCHAR(50) NOT NULL," +
-                "status BOOLEAN NOT NULL" +
+                "status INTEGER NOT NULL" +
                 ")");
         System.out.println("Tabela gerenciamento_de_hospedes criada com sucesso.");
     }
@@ -89,13 +81,13 @@ public class CriaTabela {
     private static void criarGerenciamentoDeReservas(Connection conexao) throws SQLException {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_reservas(" +
-                "id_reserva SERIAL PRIMARY KEY," +
+                "id_reserva INTEGER PRIMARY KEY," +
                 "data_reserva DATE NOT NULL," +
                 "data_retirada DATE NOT NULL," +
                 "fk_hospede varchar(13) NOT NULL," +
-                "fk_funcionario_responsavel_criacao varchar(13) NOT NULL," +
+                "fk_funcionario varchar(13) NOT NULL," +
                 "FOREIGN KEY (fk_hospede) REFERENCES gerenciamento_de_hospedes (cpf)," +
-                "FOREIGN KEY (fk_funcionario_responsavel_criacao) REFERENCES gerenciamento_de_funcionarios(cpf)" +
+                "FOREIGN KEY (fk_funcionario) REFERENCES gerenciamento_de_funcionarios(cpf)" +
                 ")");
         System.out.println("Tabela gerenciamento_de_reservas criada com sucesso.");
     }
@@ -103,7 +95,7 @@ public class CriaTabela {
     private static void criarGerenciamentoDeTipodesDeQuarto(Connection conexao) throws SQLException {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_tipos_de_quarto(" +
-                "id_tipo SERIAL PRIMARY KEY," +
+                "id_tipo INTEGER PRIMARY KEY," +
                 "descricao VARCHAR(50) NOT NULL" +
                 ")");
         System.out.println("Tabela gerenciamento_de_tipos_de_quarto criada com sucesso.");
@@ -112,7 +104,7 @@ public class CriaTabela {
     private static void criarGerenciamentoDeQuartosDaReserva(Connection conexao) throws SQLException {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_quartos_da_reserva(" +
-                "id_quarto SERIAL PRIMARY KEY," +
+                "id_quarto INTEGER PRIMARY KEY," +
                 "fk_reserva INTEGER NOT NULL," +
                 "fk_tipo INTEGER NOT NULL," +
                 "FOREIGN KEY (fk_reserva) REFERENCES gerenciamento_de_reservas(id_reserva)," +

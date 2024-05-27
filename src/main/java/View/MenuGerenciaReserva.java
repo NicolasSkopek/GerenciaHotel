@@ -35,6 +35,7 @@ public class MenuGerenciaReserva {
                         System.out.print("Data de retirada: ");
                         LocalDate dataRetirada = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                         System.out.print("CPF do Hóspede: ");
+                        scanner.nextLine();
                         String cpfHospede = scanner.nextLine();
                         System.out.print("CPF do Funcionário: ");
                         String cpfFuncionario = scanner.nextLine();

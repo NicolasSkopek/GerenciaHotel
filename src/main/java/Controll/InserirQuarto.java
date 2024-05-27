@@ -19,15 +19,16 @@ public class InserirQuarto{
 
         Quarto quarto = new Quarto(id, idReserva, idTipo);
 
-     try (Connection conexao = ConexaoBanco.obterConexao()) {
+    try (Connection conexao = ConexaoBanco.obterConexao()) {
             String retorno = cadastroQuarto(quarto, conexao);
+            System.out.println(retorno);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     public String cadastroQuarto(Quarto quarto, Connection conexao) {
         try {
-            String sql = "INSERT INTO cadastrar_livro (cpf, nome, telefone, email, status) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO gerenciamento_de_quartos_da_reserva (id_quarto, fk_reserva, fk_tipo) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             preparedStatement.setLong(1, quarto.getIdQuarto());
             preparedStatement.setInt(2, quarto.getIdReserva());

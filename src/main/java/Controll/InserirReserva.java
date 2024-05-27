@@ -34,7 +34,7 @@ public class InserirReserva {
     }
 
     public String cadastroReserva(Reservas reserva, Connection conexao) {
-        String sql = "INSERT INTO gerencimento_de_reservas(id_reserva, data_reserva, data_retirada, fk_hospede, fk_funcionario) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO gerenciamento_de_reservas(id_reserva, data_reserva, data_retirada, fk_hospede, fk_funcionario) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = conexao.prepareStatement(sql)) {
             preparedStatement.setInt(1, reserva.getIdReserva());
             preparedStatement.setObject(2, reserva.getDataReserva());

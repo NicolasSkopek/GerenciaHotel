@@ -18,15 +18,16 @@ public class InserirTipo {
 
         TipoQuarto tipoQuarto = new TipoQuarto(id, descricao);
     
-          try (Connection conexao = ConexaoBanco.obterConexao()) {
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
             String retorno = cadastroTipoQuarto(tipoQuarto, conexao);
+            System.out.println(retorno);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     public String cadastroTipoQuarto(TipoQuarto tipoQuarto, Connection conexao) {
         try {
-            String sql = "INSERT INTO cadastrar_livro (cpf, nome, telefone, email, status) VALUES (?, ?)";
+            String sql = "INSERT INTO gerenciamento_de_tipos_de_quarto (id_tipo, descricao) VALUES (?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             preparedStatement.setInt(1, tipoQuarto.getId());
             preparedStatement.setString(2, tipoQuarto.getDescricao());
