@@ -9,13 +9,13 @@ import Model.Hospede;
 
 public class InserirHospede {
 
-    private long cpf;
+    private String cpf;
     private String nome;
     private String telefone;
     private String email;
     private int status;
 
-    public InserirHospede(long cpf, String nome, String telefone, String email, int status) {
+    public InserirHospede(String cpf, String nome, String telefone, String email, int status) {
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
@@ -34,7 +34,7 @@ public class InserirHospede {
         try {
             String sql = "INSERT INTO cadastrar_livro (cpf, nome, telefone, email, status) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
-            preparedStatement.setLong(1, hospede.getCpf());
+            preparedStatement.setString(1, hospede.getCpf());
             preparedStatement.setString(2, hospede.getNome());
             preparedStatement.setString(3, hospede.getTelefone());
             preparedStatement.setString(4, hospede.getEmail());

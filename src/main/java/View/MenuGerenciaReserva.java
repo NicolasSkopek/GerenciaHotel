@@ -35,9 +35,9 @@ public class MenuGerenciaReserva {
                         System.out.print("Data de retirada: ");
                         LocalDate dataRetirada = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
                         System.out.print("CPF do Hóspede: ");
-                        long cpfHospede = scanner.nextLong();
+                        String cpfHospede = scanner.nextLine();
                         System.out.print("CPF do Funcionário: ");
-                        long cpfFuncionario = scanner.nextLong();
+                        String cpfFuncionario = scanner.nextLine();
                         
                         InserirReserva InserirReserva = new InserirReserva(id, dataEntrada, dataRetirada, cpfHospede, cpfFuncionario);
                         break;

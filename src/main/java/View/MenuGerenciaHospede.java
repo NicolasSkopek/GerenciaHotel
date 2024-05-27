@@ -25,7 +25,7 @@ public class MenuGerenciaHospede {
                 switch (opcao) {
                     case 1: // Inserir
                         System.out.print("CPF do Hóspede: ");
-                        long cpf = scanner.nextLong();
+                        String cpf = scanner.nextLine();
                         System.out.print("Nome do Hóspede: ");
                         scanner.nextLine();
                         String nome = scanner.nextLine();

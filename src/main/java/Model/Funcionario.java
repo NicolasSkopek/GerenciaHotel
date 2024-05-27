@@ -1,21 +1,21 @@
 package Model;
 
 public class Funcionario {
-    private long cpf;
+    private String cpf;
     private String nome;
     private String cargo;
 
-    public Funcionario(long cpf, String nome, String cargo) {
+    public Funcionario(String cpf, String nome, String cargo) {
         this.cpf = cpf;
         this.nome = nome;
         this.cargo = cargo;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

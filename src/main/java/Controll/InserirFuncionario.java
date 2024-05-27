@@ -9,11 +9,11 @@ import Model.Funcionario;
 
 public class InserirFuncionario {
 
-    private long cpf;
+    private String cpf;
     private String nome;
     private String cargo;
 
-    public InserirFuncionario(long cpf, String nome, String cargo) {
+    public InserirFuncionario(String cpf, String nome, String cargo) {
         this.cpf = cpf;
         this.nome = nome;
         this.cargo = cargo;
@@ -30,7 +30,7 @@ public class InserirFuncionario {
         try {
             String sql = "INSERT INTO gerenciamento_de_funcionarios (cpf, nome, cargo) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
-            preparedStatement.setLong(1, funcionario.getCpf());
+            preparedStatement.setString(1, funcionario.getCpf());
             preparedStatement.setString(2, funcionario.getNome());
             preparedStatement.setString(3, funcionario.getCargo());
             

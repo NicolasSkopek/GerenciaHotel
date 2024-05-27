@@ -27,7 +27,7 @@ public class MenuGerenciaFuncionario {
                     case 1: // Inserir
                         System.out.print("CPF do Funcionário: ");
                         scanner.nextLine();
-                        long cpf = scanner.nextLong();
+                        String cpf = scanner.nextLine();
                         System.out.print("Nome do Funcionário: ");
                         scanner.nextLine();
                         String nome = scanner.nextLine();

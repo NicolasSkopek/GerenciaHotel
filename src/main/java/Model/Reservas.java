@@ -7,11 +7,11 @@ public class Reservas {
     private int idReserva;
     private LocalDate dataReserva;
     private LocalDate dataRetirada;
-    private long cpfHospede;
-    private long cpfFuncionario;
+    private String cpfHospede;
+    private String cpfFuncionario;
 
-    public Reservas(int idReserva, LocalDate dataReserva, LocalDate dataRetirada, long cpfHospede,
-            long cpfFuncionario) {
+    public Reservas(int idReserva, LocalDate dataReserva, LocalDate dataRetirada, String cpfHospede,
+            String cpfFuncionario) {
         this.idReserva = idReserva;
         this.dataReserva = dataReserva;
         this.dataRetirada = dataRetirada;
@@ -43,19 +43,19 @@ public class Reservas {
         this.dataRetirada = dataRetirada;
     }
 
-    public long getCpfHospede() {
+    public String getCpfHospede() {
         return cpfHospede;
     }
 
-    public void setCpfHospede(long cpfHospede) {
+    public void setCpfHospede(String cpfHospede) {
         this.cpfHospede = cpfHospede;
     }
 
-    public long getCpfFuncionario() {
+    public String getCpfFuncionario() {
         return cpfFuncionario;
     }
 
-    public void setCpfFuncionario(long cpfFuncionario) {
+    public void setCpfFuncionario(String cpfFuncionario) {
         this.cpfFuncionario = cpfFuncionario;
     }
 

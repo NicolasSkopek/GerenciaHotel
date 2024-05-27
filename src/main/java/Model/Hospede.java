@@ -2,13 +2,13 @@ package Model;
 
 public class Hospede {
 
-    private long cpf;
+    private String cpf;
     private String nome;
     private String telefone;
     private String email;
     private int status;
 
-    public Hospede(long cpf, String nome, String telefone, String email, int status) {
+    public Hospede(String cpf, String nome, String telefone, String email, int status) {
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
@@ -16,11 +16,11 @@ public class Hospede {
         this.status = status;
     }
 
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

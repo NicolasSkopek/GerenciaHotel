@@ -67,7 +67,7 @@ public class CriaTabela {
     private static void criarGerenciamentoDeHospedes(Connection conexao) throws SQLException {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_hospedes(" +
-                "cpf  SERIAL NOT NULL  PRIMARY KEY," +
+                "cpf  varchar(13) NOT NULL  PRIMARY KEY," +
                 "nome VARCHAR(50) NOT NULL," +
                 "telefone VARCHAR(50) NOT NULL," +
                 "email VARCHAR(50) NOT NULL," +
@@ -79,7 +79,7 @@ public class CriaTabela {
     private static void criarGerenciamentoDeFuncionarios(Connection conexao) throws SQLException {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_funcionarios(" +
-                "cpf SERIAL PRIMARY KEY," +
+                "cpf varchar(13) PRIMARY KEY," +
                 "nome VARCHAR(50) NOT NULL," +
                 "cargo VARCHAR(50) NOT NULL" +
                 ")");
@@ -92,8 +92,8 @@ public class CriaTabela {
                 "id_reserva SERIAL PRIMARY KEY," +
                 "data_reserva DATE NOT NULL," +
                 "data_retirada DATE NOT NULL," +
-                "fk_hospede INTEGER NOT NULL," +
-                "fk_funcionario_responsavel_criacao INTEGER NOT NULL," +
+                "fk_hospede varchar(13) NOT NULL," +
+                "fk_funcionario_responsavel_criacao varchar(13) NOT NULL," +
                 "FOREIGN KEY (fk_hospede) REFERENCES gerenciamento_de_hospedes (cpf)," +
                 "FOREIGN KEY (fk_funcionario_responsavel_criacao) REFERENCES gerenciamento_de_funcionarios(cpf)" +
                 ")");

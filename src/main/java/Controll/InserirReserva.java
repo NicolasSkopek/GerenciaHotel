@@ -13,10 +13,10 @@ public class InserirReserva {
     private int idReserva;
     private LocalDate dataReserva;
     private LocalDate dataRetirada;
-    private long cpfHospede;
-    private long cpfFuncionario;
+    private String cpfHospede;
+    private String cpfFuncionario;
 
-    public InserirReserva(int idReserva, LocalDate dataReserva, LocalDate dataRetirada, long cpfHospede, long cpfFuncionario) {
+    public InserirReserva(int idReserva, LocalDate dataReserva, LocalDate dataRetirada, String cpfHospede, String cpfFuncionario) {
         this.idReserva = idReserva;
         this.dataReserva = dataReserva;
         this.dataRetirada = dataRetirada;
@@ -39,8 +39,8 @@ public class InserirReserva {
             preparedStatement.setInt(1, reserva.getIdReserva());
             preparedStatement.setObject(2, reserva.getDataReserva());
             preparedStatement.setObject(3, reserva.getDataRetirada());
-            preparedStatement.setLong(4, reserva.getCpfHospede());
-            preparedStatement.setLong(5, reserva.getCpfFuncionario());
+            preparedStatement.setString(4, reserva.getCpfHospede());
+            preparedStatement.setString(5, reserva.getCpfFuncionario());
 
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {

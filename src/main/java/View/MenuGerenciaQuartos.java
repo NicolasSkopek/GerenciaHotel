@@ -14,10 +14,10 @@ public class MenuGerenciaQuartos {
 
         do{
             System.out.println("\n---- Gerenciamento de Quartos ----");
-            System.out.println("[1] - Inserir Dados da Quartos");
-            System.out.println("[2] - Atuaizar Dados da Quartos");
-            System.out.println("[3] - Excluir Dados da Quartos");
-            System.out.println("[4] - Exibir Dados da Quartos");
+            System.out.println("[1] - Inserir Dados do Quartos");
+            System.out.println("[2] - Atuaizar Dados do Quartos");
+            System.out.println("[3] - Excluir Dados do Quartos");
+            System.out.println("[4] - Exibir Dados do Quartos");
             System.out.println("[0] - Voltar");
             System.out.print("Opcão: ");
             try{
