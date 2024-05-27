@@ -104,7 +104,7 @@ public class CriaTabela {
     private static void criarGerenciamentoDeQuartosDaReserva(Connection conexao) throws SQLException {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_quartos_da_reserva(" +
-                "id_quarto INTEGER PRIMARY KEY," +
+                "num_quarto INTEGER PRIMARY KEY," +
                 "fk_reserva INTEGER NOT NULL," +
                 "fk_tipo INTEGER NOT NULL," +
                 "FOREIGN KEY (fk_reserva) REFERENCES gerenciamento_de_reservas(id_reserva)," +

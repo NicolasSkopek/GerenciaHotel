@@ -28,7 +28,7 @@ public class InserirQuarto{
     }
     public String cadastroQuarto(Quarto quarto, Connection conexao) {
         try {
-            String sql = "INSERT INTO gerenciamento_de_quartos_da_reserva (id_quarto, fk_reserva, fk_tipo) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO gerenciamento_de_quartos_da_reserva (num_quarto, fk_reserva, fk_tipo) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             preparedStatement.setLong(1, quarto.getIdQuarto());
             preparedStatement.setInt(2, quarto.getIdReserva());
