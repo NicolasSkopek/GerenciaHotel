@@ -29,7 +29,6 @@ public class MenuGerenciaFuncionario {
                         scanner.nextLine();
                         String cpf = scanner.nextLine();
                         System.out.print("Nome do Funcionário: ");
-                        scanner.nextLine();
                         String nome = scanner.nextLine();
                         System.out.print("Cargo do Funcionário: ");
                         String cargo = scanner.nextLine();

@@ -32,7 +32,7 @@ public class InserirHospede {
     }
     public String cadastroHospede(Hospede hospede, Connection conexao) {
         try {
-            String sql = "INSERT INTO cadastrar_livro (cpf, nome, telefone, email, status) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO gerenciamento_de_hospedes (cpf, nome, telefone, email, status) VALUES (?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             preparedStatement.setString(1, hospede.getCpf());
             preparedStatement.setString(2, hospede.getNome());

@@ -21,12 +21,14 @@ public class InserirFuncionario {
         Funcionario funcionario = new Funcionario(cpf, nome, cargo);
         
     try (Connection conexao = ConexaoBanco.obterConexao()) {
-            String retorno = cadastroHospede(funcionario, conexao);
+            String retorno = cadastroFuncionario(funcionario, conexao);
+            System.out.println(retorno);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-    public String cadastroHospede(Funcionario funcionario, Connection conexao) {
+        
+    public String cadastroFuncionario(Funcionario funcionario, Connection conexao) {
         try {
             String sql = "INSERT INTO gerenciamento_de_funcionarios (cpf, nome, cargo) VALUES (?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
