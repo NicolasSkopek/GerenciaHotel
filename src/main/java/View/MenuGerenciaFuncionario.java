@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Controller.ControllFuncionario;
-import Model.Funcionario;
 
 
 public class MenuGerenciaFuncionario{

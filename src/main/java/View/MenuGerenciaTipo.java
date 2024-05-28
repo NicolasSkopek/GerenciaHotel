@@ -23,13 +23,7 @@ public class MenuGerenciaTipo{
                 opcao = scanner.nextInt();
                 switch (opcao) {
                     case 1: // Inserir
-                        System.out.print("ID do Tipo do Quarto: ");
-                        int id = scanner.nextInt();
-                        System.out.print("Descrição: ");
-                        scanner.nextLine();
-                        String descricao = scanner.nextLine();
-                        
-                        ControllTipo InserirTipo = new ControllTipo(id, descricao);
+                        ControllTipo.inserirTipo();
                         break;
                     case 2: // Atualizar
                         

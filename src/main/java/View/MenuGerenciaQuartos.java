@@ -24,14 +24,7 @@ public class MenuGerenciaQuartos{
                 opcao = scanner.nextInt();
                 switch (opcao) {
                     case 1: // Inserir
-                        System.out.print("ID do Quarto: ");
-                        int id = scanner.nextInt();
-                        System.out.print("ID da Reserva: ");
-                        int idReserva = scanner.nextInt();
-                        System.out.print("ID do Tipo do Quarto: ");
-                        int idTipo = scanner.nextInt();
-
-                        ControllQuarto InserirQuarto= new ControllQuarto(id, idReserva, idTipo);
+                        ControllQuarto.inserirQuarto();
                         break;
                     case 2: // Atualizar
                         

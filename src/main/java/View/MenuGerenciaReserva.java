@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 import Controller.ControllReserva;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-
 public class MenuGerenciaReserva{
 
     static Scanner scanner = new Scanner(System.in);
@@ -27,22 +24,8 @@ public class MenuGerenciaReserva{
             try{
                 opcao = scanner.nextInt();
                 switch (opcao) {
-                    case 1: // Inserir
-                        System.out.print("ID da Reserva: ");
-                        int id = scanner.nextInt();
-                        System.out.print("Data de entrada: ");
-                        LocalDate dataEntrada = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                        System.out.print("Data de retirada: ");
-                        LocalDate dataRetirada = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                        System.out.print("CPF do Hóspede: ");
-                        scanner.nextLine();
-                        String cpfHospede = scanner.nextLine();
-                        System.out.print("CPF do Funcionário: ");
-                        String cpfFuncionario = scanner.nextLine();
-
-                        System.out.print("iD (0 - INATIVO / 1 - ATIVO): ");
-                        int status = scanner.nextInt();
-                        ControllReserva InserirReserva = new ControllReserva(id, dataEntrada, dataRetirada, cpfHospede, cpfFuncionario, status);
+                    case 1: // Inserir             
+                        ControllReserva.inserirReserva();
                         break;
                     case 2: // Atualizar
                         
