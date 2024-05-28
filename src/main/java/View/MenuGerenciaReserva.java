@@ -3,7 +3,7 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controller.InserirReserva;
+import Controller.ControllReserva;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -42,9 +42,7 @@ public class MenuGerenciaReserva{
 
                         System.out.print("iD (0 - INATIVO / 1 - ATIVO): ");
                         int status = scanner.nextInt();
-
-                                      
-                        InserirReserva InserirReserva = new InserirReserva(id, dataEntrada, dataRetirada, cpfHospede, cpfFuncionario, status);
+                        ControllReserva InserirReserva = new ControllReserva(id, dataEntrada, dataRetirada, cpfHospede, cpfFuncionario, status);
                         break;
                     case 2: // Atualizar
                         

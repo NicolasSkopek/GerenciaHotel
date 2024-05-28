@@ -86,6 +86,7 @@ public class CriaTabela {
                 "status INTEGER NOT NULL," +
                 "fk_hospede varchar(13) NOT NULL," +
                 "fk_funcionario varchar(13) NOT NULL," +
+                "status INTEGER NOT NULL,"+
                 "FOREIGN KEY (fk_hospede) REFERENCES gerenciamento_de_hospedes (cpf)," +
                 "FOREIGN KEY (fk_funcionario) REFERENCES gerenciamento_de_funcionarios(cpf)" +
                 ")");

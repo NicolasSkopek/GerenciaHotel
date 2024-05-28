@@ -3,11 +3,11 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controller.InserirQuarto;
+import Controller.ControllQuarto;
 
 public class MenuGerenciaQuartos{
     static Scanner scanner = new Scanner(System.in);
- 
+
     public int opcao = 0;
     
     public void menuQuarto(){
@@ -31,7 +31,7 @@ public class MenuGerenciaQuartos{
                         System.out.print("ID do Tipo do Quarto: ");
                         int idTipo = scanner.nextInt();
 
-                        InserirQuarto InserirQuarto= new InserirQuarto(id, idReserva, idTipo);
+                        ControllQuarto InserirQuarto= new ControllQuarto(id, idReserva, idTipo);
                         break;
                     case 2: // Atualizar
                         

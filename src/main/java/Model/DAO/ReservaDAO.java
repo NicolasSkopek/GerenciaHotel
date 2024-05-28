@@ -1,41 +1,15 @@
-package Controller;
+package Model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.time.LocalDate;
+
 import Model.Reservas;
 
-import Model.DB.ConexaoBanco;
+public class ReservaDAO implements IDAO<Reservas> {
 
-public class InserirReserva {
-
-    private int idReserva;
-    private LocalDate dataReserva;
-    private LocalDate dataRetirada;
-    private String cpfHospede;
-    private String cpfFuncionario;
-    private int status;
-
-    public InserirReserva(int idReserva, LocalDate dataReserva, LocalDate dataRetirada, String cpfHospede, String cpfFuncionario, int status) {
-        this.idReserva = idReserva;
-        this.dataReserva = dataReserva;
-        this.dataRetirada = dataRetirada;
-        this.cpfHospede = cpfHospede;
-        this.cpfFuncionario = cpfFuncionario;
-        this.status = status;
-
-        Reservas reserva = new Reservas(idReserva, dataReserva, dataRetirada, cpfHospede, cpfFuncionario, status);
-
-        try (Connection conexao = ConexaoBanco.obterConexao()) {
-            String retorno = cadastroReserva(reserva, conexao);
-            System.out.println(retorno);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String cadastroReserva(Reservas reserva, Connection conexao) {
+    @Override
+    public String cadastrar(Reservas reserva, Connection conexao) {
         String sql = "INSERT INTO gerenciamento_de_reservas(id_reserva, data_reserva, data_retirada, fk_hospede, fk_funcionario, status) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = conexao.prepareStatement(sql)) {
             preparedStatement.setInt(1, reserva.getIdReserva());
@@ -55,4 +29,23 @@ public class InserirReserva {
             return "Ocorreu um erro ao cadastrar a reserva: " + ex.getMessage();
         }
     }
+
+    @Override
+    public void atualizar(Reservas reserva, Connection conexao) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void excluir(Reservas reserva, Connection conexao) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void listar(Reservas reserva, Connection conexao) {
+        // TODO Auto-generated method stub
+        
+    }
+    
 }

@@ -1,30 +1,15 @@
-package Controller;
-
-import Model.TipoQuarto;
-import Model.DB.ConexaoBanco;
+package Model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InserirTipo {
-    private int id;
-    private String descricao;
+import Model.TipoQuarto;
 
-    public InserirTipo(int id, String descricao) {
-        this.id = id;
-        this.descricao = descricao;
-
-        TipoQuarto tipoQuarto = new TipoQuarto(id, descricao);
+public class TipoQuartoDAO implements IDAO<TipoQuarto>{
     
-        try (Connection conexao = ConexaoBanco.obterConexao()) {
-            String retorno = cadastroTipoQuarto(tipoQuarto, conexao);
-            System.out.println(retorno);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    public String cadastroTipoQuarto(TipoQuarto tipoQuarto, Connection conexao) {
+    @Override
+    public String cadastrar(TipoQuarto tipoQuarto, Connection conexao) {
         try {
             String sql = "INSERT INTO gerenciamento_de_tipos_de_quarto (id_tipo, descricao) VALUES (?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
@@ -41,7 +26,23 @@ public class InserirTipo {
             return "Ocorreu um erro ao cadastrar o tipo de quarto: " + ex.getMessage();
         }
     }
-    
 
+    @Override
+    public void atualizar(TipoQuarto tipoQuarto, Connection conexao) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void excluir(TipoQuarto tipoQuarto, Connection conexao) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public void listar(TipoQuarto tipoQuarto, Connection conexao) {
+        // TODO Auto-generated method stub
+        
+    }
     
 }
