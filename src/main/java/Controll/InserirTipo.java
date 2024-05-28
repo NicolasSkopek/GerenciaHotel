@@ -1,12 +1,11 @@
 package Controll;
 
+import Model.TipoQuarto;
 import Model.DB.ConexaoBanco;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
-import Model.TipoQuarto;
 
 public class InserirTipo {
     private int id;

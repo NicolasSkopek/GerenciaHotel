@@ -6,12 +6,11 @@ import java.util.Scanner;
 import Controll.InserirFuncionario;
 
 
-public class MenuGerenciaFuncionario {
+public class MenuGerenciaFuncionario extends MenuPrincipal{
     static Scanner scanner = new Scanner(System.in);
-
-    private static int opcao = 0;
     
-    public static void MenuFuncionario(){
+    @Override
+    public void Menu(){
 
         do{
             System.out.println("\n---- Gerenciamento de Funcionário ----");

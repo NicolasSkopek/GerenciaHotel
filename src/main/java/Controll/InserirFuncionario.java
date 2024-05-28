@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import Model.DB.ConexaoBanco;
 import Model.Funcionario;
+import Model.DB.ConexaoBanco;
 
 public class InserirFuncionario {
 

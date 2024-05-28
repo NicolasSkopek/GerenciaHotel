@@ -1,16 +1,16 @@
 package View;
 
-import Controll.InserirHospede;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class MenuGerenciaHospede {
+import Controll.InserirHospede;
+
+public class MenuGerenciaHospede extends MenuPrincipal{
 
     static Scanner scanner = new Scanner(System.in);
-
-    private static int opcao = 0;
     
-    public static void MenuHospede(){
+    @Override
+    public void Menu(){
 
         do{
             System.out.println("\n---- Gerenciamento de Hóspedes ----");
@@ -33,10 +33,8 @@ public class MenuGerenciaHospede {
                         String telefone = scanner.nextLine();
                         System.out.print("Email do Hóspede: ");
                         String email = scanner.nextLine();
-                        System.out.print("Status: ");
-                        int status = scanner.nextInt();
                         
-                        InserirHospede inserirHospede = new InserirHospede(cpf, nome, telefone, email, status);
+                        InserirHospede inserirHospede = new InserirHospede(cpf, nome, telefone, email);
                         break;
                     case 2: // Atualizar
                         

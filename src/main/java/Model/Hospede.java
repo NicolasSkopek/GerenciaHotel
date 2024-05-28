@@ -6,14 +6,12 @@ public class Hospede {
     private String nome;
     private String telefone;
     private String email;
-    private int status;
 
-    public Hospede(String cpf, String nome, String telefone, String email, int status) {
+    public Hospede(String cpf, String nome, String telefone, String email) {
         this.cpf = cpf;
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
-        this.status = status;
     }
 
     public String getCpf() {
@@ -47,11 +45,6 @@ public class Hospede {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public int getStatus() {
-        return status;
-    }
-
 
 
 
