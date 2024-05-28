@@ -31,9 +31,23 @@ public class FuncionarioDAO implements IDAO<Funcionario> {
     }
 
     @Override
-    public String atualizar(Funcionario funcionrio, Connection conexao) {
-        // TODO Auto-generated method stub
-        return null;
+    public String atualizar(Funcionario funcionario, Connection conexao) {
+        try {
+            String sql = "UPDATE gerenciamento_de_funcionarios SET nome = ?, cargo = ? WHERE cpf = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setString(1, funcionario.getNome());
+            preparedStatement.setString(2, funcionario.getCargo());
+            preparedStatement.setString(3, funcionario.getCpf());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                return "Funcionário atualizado com sucesso!";
+            } else {
+                return "Falha ao atualizar o funcionário!";
+            }
+        } catch (SQLException ex) {
+            return "Ocorreu um erro ao atualizar o funcionário: " + ex.getMessage();
+        }
     }
 
     @Override

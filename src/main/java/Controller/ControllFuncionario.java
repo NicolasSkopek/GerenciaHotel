@@ -56,4 +56,26 @@ public class ControllFuncionario {
             e.printStackTrace();
         }
     }
+
+    public static void atualizarFuncionario(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o CPF do funcionário que deseja editar os dados:");
+        String cpf = scanner.nextLine();
+        
+        System.out.print("Novo Nome do Funcionário: ");
+        String nome = scanner.nextLine();
+        System.out.print("Novo Cargo do Funcionário: ");
+        String cargo = scanner.nextLine();
+
+        Funcionario funcionarioAtualizado = new Funcionario(cpf, nome, cargo);
+
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+            String retorno = funcionarioDAO.atualizar(funcionarioAtualizado, conexao);
+            System.out.println(retorno);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

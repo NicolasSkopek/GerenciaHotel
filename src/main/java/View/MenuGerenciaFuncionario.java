@@ -28,7 +28,7 @@ public class MenuGerenciaFuncionario{
                         ControllFuncionario.inserirFuncionario();
                         break;
                     case 2: // Atualizar
-                        
+                        ControllFuncionario.atualizarFuncionario();
                         break;
                     case 3: // Excluir
                         ControllFuncionario.excluirFuncionario();
