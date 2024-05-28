@@ -93,7 +93,7 @@ public class FuncionarioDAO implements IDAO<Funcionario> {
             String nome = resultado.getString("nome");
             String cargo = resultado.getString("cargo");
 
-            System.out.println("\nID: " + cpf + " | Título: " + nome + " | Autor: " + cargo);
+            System.out.println("\nCPF: " + cpf + " | Nome do funcionário: " + nome + " | Cargo: " + cargo);
         }
         resultado.close();
         declaracao.close();

@@ -34,7 +34,7 @@ public class MenuGerenciaHospede{
                         ControllHospede.excluirHospede();
                         break;
                     case 4: // Exibir
-                
+                        ControllHospede.listarHospedes();
                         break;
                     case 0:
                         return;

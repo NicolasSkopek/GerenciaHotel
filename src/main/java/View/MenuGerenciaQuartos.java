@@ -33,7 +33,7 @@ public class MenuGerenciaQuartos{
                         ControllQuarto.excluirQuarto();
                         break;
                     case 4: // Exibir
-                
+                        ControllQuarto.listarQuartos();
                         break;
                     case 0:
                         return;

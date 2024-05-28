@@ -34,7 +34,7 @@ public class MenuGerenciaReserva{
                         ControllReserva.excluirReserva();
                         break;
                     case 4: // Exibir
-                
+                        ControllReserva.listarReservas();
                         break;
                     case 0:
                         return;

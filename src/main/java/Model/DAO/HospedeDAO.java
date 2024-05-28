@@ -2,7 +2,9 @@ package Model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import Model.Hospede;
 
@@ -66,8 +68,26 @@ public class HospedeDAO implements IDAO<Hospede>{
 
     @Override
     public void listar(Connection conexao) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'listar'");
+        try {
+        Statement declaracao = conexao.createStatement();
+
+        String sql = "SELECT * FROM gerenciamento_de_hospedes";
+        
+        ResultSet resultado = declaracao.executeQuery(sql);
+
+        while (resultado.next()) {
+            String cpf = resultado.getString("cpf");
+            String nome = resultado.getString("nome");
+            String telefone = resultado.getString("telefone");
+            String email = resultado.getString("email");
+
+            System.out.println("\nCPF: " + cpf + " | Nome do Hóspede: " + nome + " | Telefone: " + telefone + " | Email:" + email);
+        }
+        resultado.close();
+        declaracao.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
     }
     
 }

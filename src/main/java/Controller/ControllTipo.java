@@ -43,4 +43,17 @@ public class ControllTipo {
             e.printStackTrace();
         }
     }
+
+    public static void listarTipos(){
+        System.out.println("Lista de Tipos de quarto:");
+        try {
+            Connection conexao = ConexaoBanco.obterConexao();
+
+            TipoQuartoDAO tipoQuartoDAO = new TipoQuartoDAO();
+            tipoQuartoDAO.listar(conexao);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

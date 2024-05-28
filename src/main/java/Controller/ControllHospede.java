@@ -46,4 +46,17 @@ public class ControllHospede {
             e.printStackTrace();
         }
     }
+
+    public static void listarHospedes(){
+        System.out.println("Lista de Hóspedes:");
+        try {
+            Connection conexao = ConexaoBanco.obterConexao();
+
+            HospedeDAO hospedeDAO = new HospedeDAO();
+            hospedeDAO.listar(conexao);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -2,7 +2,9 @@ package Model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import Model.Quarto;
 public class QuartoDAO implements IDAO<Quarto> {
@@ -64,7 +66,25 @@ public class QuartoDAO implements IDAO<Quarto> {
 
     @Override
     public void listar(Connection conexao) {
-        // TODO Auto-generated method stub
+        try {
+        Statement declaracao = conexao.createStatement();
+
+        String sql = "SELECT * FROM gerenciamento_de_quartos_da_reserva";
+        
+        ResultSet resultado = declaracao.executeQuery(sql);
+
+        while (resultado.next()) {
+            long id = resultado.getLong("num_quarto");
+            int idReserva = resultado.getInt("nome");
+            int tipo = resultado.getInt("cargo");
+
+            System.out.println("\nNumero do quarto: " + id + " | Id da reserva: " + idReserva + " | Tipo do quarto: " + tipo);
+        }
+        resultado.close();
+        declaracao.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
 
     }
     

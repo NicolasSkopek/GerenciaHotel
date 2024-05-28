@@ -2,7 +2,9 @@ package Model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import Model.TipoQuarto;
 
@@ -64,8 +66,24 @@ public class TipoQuartoDAO implements IDAO<TipoQuarto>{
 
     @Override
     public void listar(Connection conexao) {
-        // TODO Auto-generated method stub
+    try {
+        Statement declaracao = conexao.createStatement();
+
+        String sql = "SELECT * FROM gerenciamento_de_tipos_de_quarto";
         
+        ResultSet resultado = declaracao.executeQuery(sql);
+
+        while (resultado.next()) {
+            int id = resultado.getInt("id_tipo");
+            String descricao = resultado.getString("descricao");
+
+            System.out.println("\nTipo do quarto: " + id + " | Descrição do quarto: " + descricao);
+        }
+        resultado.close();
+        declaracao.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
     }
     
 }

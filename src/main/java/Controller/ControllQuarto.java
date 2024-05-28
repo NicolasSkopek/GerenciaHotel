@@ -44,4 +44,17 @@ public class ControllQuarto{
             e.printStackTrace();
         }
     }
+
+    public static void listarQuartos(){
+        System.out.println("Lista de Quartos:");
+        try {
+            Connection conexao = ConexaoBanco.obterConexao();
+
+            QuartoDAO quartoDAO = new QuartoDAO();
+            quartoDAO.listar(conexao);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
