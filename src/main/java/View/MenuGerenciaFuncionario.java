@@ -31,7 +31,7 @@ public class MenuGerenciaFuncionario{
                         
                         break;
                     case 3: // Excluir
-                        
+                        ControllFuncionario.excluirFuncionario();
                         break;
                     case 4: // Exibir
                 

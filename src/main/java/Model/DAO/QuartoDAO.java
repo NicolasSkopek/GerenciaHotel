@@ -28,21 +28,44 @@ public class QuartoDAO implements IDAO<Quarto> {
     }
 
     @Override
-    public void atualizar(Quarto quarto, Connection conexao) {
+    public String atualizar(Quarto quarto, Connection conexao) {
         // TODO Auto-generated method stub
-        
+        return null;
     }
 
     @Override
-    public void excluir(Quarto quarto, Connection conexao) {
+    public String excluir(Connection conexao, String remov) {
         // TODO Auto-generated method stub
-        
+        return null;
     }
 
     @Override
-    public void listar(Quarto quarto, Connection conexao) {
+    public String excluir(Connection conexao, long remov) {
+        try {
+            String sql = "DELETE FROM gerenciamento_de_quartos_da_reserva WHERE num_quarto = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setLong(1, remov);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                return "Quarto removido do banco de dados com sucesso!";
+            } else {
+                return "Falha ao excluir o Quarto do banco de dados!";
+            }
+        } catch (SQLException ex) {
+            return "Ocorreu um erro ao excluir o Quarto: " + ex.getMessage();
+        }
+    }
+
+    @Override
+    public String excluir(Connection conexao, int remov) {
         // TODO Auto-generated method stub
-        
+        return null;
+    }
+
+    @Override
+    public String listar(Quarto quarto, Connection conexao) {
+        // TODO Auto-generated method stub
+        return null;
     }
     
 }

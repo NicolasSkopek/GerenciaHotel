@@ -83,7 +83,6 @@ public class CriaTabela {
                 "id_reserva INTEGER PRIMARY KEY," +
                 "data_reserva DATE NOT NULL," +
                 "data_retirada DATE NOT NULL," +
-                "status INTEGER NOT NULL," +
                 "fk_hospede varchar(13) NOT NULL," +
                 "fk_funcionario varchar(13) NOT NULL," +
                 "status INTEGER NOT NULL,"+

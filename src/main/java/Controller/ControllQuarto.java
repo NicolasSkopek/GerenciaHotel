@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 import Model.Quarto;
+import Model.DAO.FuncionarioDAO;
 import Model.DAO.QuartoDAO;
 import Model.DB.ConexaoBanco;
 
@@ -12,7 +13,7 @@ public class ControllQuarto{
     public static void inserirQuarto() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("ID do Quarto: ");
+        System.out.print("Numero do Quarto: ");
         int id = scanner.nextInt();
         System.out.print("ID da Reserva: ");
         int idReserva = scanner.nextInt();
@@ -30,5 +31,17 @@ public class ControllQuarto{
         }
     }
 
-    
+    public static void excluirQuarto(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o número do quarto que deseja Remover do Banco de Dados:");
+        long remov = scanner.nextInt();
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
+            QuartoDAO quartoDAO = new QuartoDAO();
+            String retorno = quartoDAO.excluir(conexao,remov);
+            System.out.println(retorno);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

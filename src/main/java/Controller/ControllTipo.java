@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.TipoQuarto;
+import Model.DAO.FuncionarioDAO;
 import Model.DAO.TipoQuartoDAO;
 import Model.DB.ConexaoBanco;
 
@@ -29,4 +30,17 @@ public class ControllTipo {
         }
     }
     
+    public static void excluirTipo(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o Id do tipo de quarto que deseja Remover do Banco de Dados:");
+        int remov = scanner.nextInt();
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
+            TipoQuartoDAO tipoQuartoDAO = new TipoQuartoDAO();
+            String retorno = tipoQuartoDAO.excluir(conexao,remov);
+            System.out.println(retorno);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

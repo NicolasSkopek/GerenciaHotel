@@ -30,7 +30,7 @@ public class MenuGerenciaQuartos{
                         
                         break;
                     case 3: // Excluir
-                        
+                        ControllQuarto.excluirQuarto();
                         break;
                     case 4: // Exibir
                 

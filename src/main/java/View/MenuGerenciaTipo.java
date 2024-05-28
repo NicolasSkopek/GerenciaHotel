@@ -29,7 +29,7 @@ public class MenuGerenciaTipo{
                         
                         break;
                     case 3: // Excluir
-                        
+                        ControllTipo.excluirTipo();
                         break;
                     case 4: // Exibir
                 

@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import Model.Reservas;
+import Model.DAO.FuncionarioDAO;
 import Model.DAO.ReservaDAO;
 import Model.DB.ConexaoBanco;
 
@@ -39,4 +40,18 @@ public static void inserirReserva() {
         }
     }
 
+    public static void excluirReserva(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o Id da reserva que deseja Remover do Banco de Dados:");
+        int remov = scanner.nextInt();
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
+            ReservaDAO reservaDAO = new ReservaDAO();
+            String retorno = reservaDAO.excluir(conexao,remov);
+            System.out.println(retorno);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
+

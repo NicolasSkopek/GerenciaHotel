@@ -6,9 +6,13 @@ public interface IDAO<T> {
     
     String cadastrar(T entidade, Connection conexao);
 
-    void atualizar(T entidade, Connection conexao);
+    String atualizar(T entidade, Connection conexao);
 
-    void excluir(T entidade, Connection conexao);
+    String excluir(Connection conexao, String remov);
     
-    void listar(T entidade, Connection conexao);
+    String excluir(Connection conexao, long remov);
+    
+    String excluir(Connection conexao, int remov);
+
+    String listar(T entidade, Connection conexao);
 }

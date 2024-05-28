@@ -29,4 +29,18 @@ public class ControllFuncionario {
             e.printStackTrace();
         }
     }
+
+    public static void excluirFuncionario(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o CPF do funcionário que deseja Remover do Banco de Dados:");
+        String remov = scanner.nextLine();
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+            String retorno = funcionarioDAO.excluir(conexao,remov);
+            System.out.println(retorno);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

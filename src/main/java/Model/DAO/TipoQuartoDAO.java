@@ -28,21 +28,44 @@ public class TipoQuartoDAO implements IDAO<TipoQuarto>{
     }
 
     @Override
-    public void atualizar(TipoQuarto tipoQuarto, Connection conexao) {
+    public String atualizar(TipoQuarto tipoQuarto, Connection conexao) {
         // TODO Auto-generated method stub
-        
+        return null;
     }
 
     @Override
-    public void excluir(TipoQuarto tipoQuarto, Connection conexao) {
+    public String excluir(Connection conexao, String remov) {
         // TODO Auto-generated method stub
-        
+        return null;
     }
 
     @Override
-    public void listar(TipoQuarto tipoQuarto, Connection conexao) {
+    public String excluir(Connection conexao, long remov) {
         // TODO Auto-generated method stub
-        
+        return null;
+    }
+
+    @Override
+    public String excluir(Connection conexao, int remov) {
+        try {
+            String sql = "DELETE FROM gerenciamento_de_reservas WHERE id_quarto = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setInt(1, remov);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                return "Tipo de quarto removido do banco de dados com sucesso!";
+            } else {
+                return "Falha ao excluir o tipo de quarto do banco de dados!";
+            }
+        } catch (SQLException ex) {
+            return "Ocorreu um erro ao excluir o tipo de quarto: " + ex.getMessage();
+        }
+    }
+
+    @Override
+    public String listar(TipoQuarto tipoQuarto, Connection conexao) {
+        // TODO Auto-generated method stub
+        return null;
     }
     
 }

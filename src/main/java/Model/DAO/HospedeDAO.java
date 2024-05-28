@@ -30,19 +30,42 @@ public class HospedeDAO implements IDAO<Hospede>{
         }
 
     @Override
-    public void atualizar(Hospede hospede, Connection conexao) {
+    public String atualizar(Hospede hospede, Connection conexao) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
     }
 
     @Override
-    public void excluir(Hospede hospede, Connection conexao) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'excluir'");
+    public String excluir(Connection conexao, String remov) {
+        try {
+            String sql = "DELETE FROM gerenciamento_de_hospedes WHERE cpf = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setString(1, remov);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                return "Hospede removido do banco de dados com sucesso!";
+            } else {
+                return "Falha ao excluir o hospede do banco de dados!";
+            }
+        } catch (SQLException ex) {
+            return "Ocorreu um erro ao excluir o hospede: " + ex.getMessage();
+        } 
     }
 
     @Override
-    public void listar(Hospede hospede, Connection conexao) {
+    public String excluir(Connection conexao, long remov) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String excluir(Connection conexao, int remov) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public String listar(Hospede hospede, Connection conexao) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'listar'");
     }
