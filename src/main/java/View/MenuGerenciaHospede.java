@@ -25,17 +25,7 @@ public class MenuGerenciaHospede{
                 opcao = scanner.nextInt();
                 switch (opcao) {
                     case 1: // Inserir
-                        System.out.print("CPF do Hóspede: ");
-                        scanner.nextLine();
-                        String cpf = scanner.nextLine();
-                        System.out.print("Nome do Hóspede: ");
-                        String nome = scanner.nextLine();
-                        System.out.print("Telefone do Hóspede: ");
-                        String telefone = scanner.nextLine();
-                        System.out.print("Email do Hóspede: ");
-                        String email = scanner.nextLine();
-                        
-                        ControllHospede inserirHospede = new ControllHospede(cpf, nome, telefone, email);
+                        ControllHospede.inserirHospede();
                         break;
                     case 2: // Atualizar
                         

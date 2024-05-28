@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Controller.ControllFuncionario;
+import Model.Funcionario;
 
 
 public class MenuGerenciaFuncionario{
@@ -24,16 +25,8 @@ public class MenuGerenciaFuncionario{
             try{
                 opcao = scanner.nextInt();
                 switch (opcao) {
-                    case 1: // Inserir
-                        System.out.print("CPF do Funcionário: ");
-                        scanner.nextLine();
-                        String cpf = scanner.nextLine();
-                        System.out.print("Nome do Funcionário: ");
-                        String nome = scanner.nextLine();
-                        System.out.print("Cargo do Funcionário: ");
-                        String cargo = scanner.nextLine();
-                        
-                        ControllFuncionario inserirFuncionario = new ControllFuncionario(cpf, nome, cargo);
+                    case 1: // Inserir 
+                        ControllFuncionario.inserirFuncionario();
                         break;
                     case 2: // Atualizar
                         

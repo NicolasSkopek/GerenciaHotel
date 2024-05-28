@@ -1,33 +1,32 @@
 package Controller;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 import Model.Funcionario;
 import Model.DAO.FuncionarioDAO;
 import Model.DB.ConexaoBanco;
 
 public class ControllFuncionario {
+    public static void inserirFuncionario() {
+        Scanner scanner = new Scanner(System.in);
 
-    private String cpf;
-    private String nome;
-    private String cargo;
-
-    public ControllFuncionario(String cpf, String nome, String cargo) {
-        this.cpf = cpf;
-        this.nome = nome;
-        this.cargo = cargo;
-
-        Funcionario funcionario = new Funcionario(cpf, nome, cargo);
+        System.out.print("CPF do Funcionário: ");
+        String cpf = scanner.nextLine();
+        System.out.print("Nome do Funcionário: ");
+        String nome = scanner.nextLine();
+        System.out.print("Cargo do Funcionário: ");
+        String cargo = scanner.nextLine();
         
-    try (Connection conexao = ConexaoBanco.obterConexao()) {
+        Funcionario novofuncionario = new Funcionario(cpf, nome, cargo);
+        
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
-            String retorno = funcionarioDAO.cadastrar(funcionario, conexao);
+            String retorno = funcionarioDAO.cadastrar(novofuncionario, conexao);
             System.out.println(retorno);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
 }
