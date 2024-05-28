@@ -1,4 +1,4 @@
-package Controll;
+package Controller;
 
 import Model.TipoQuarto;
 import Model.DB.ConexaoBanco;

@@ -3,7 +3,7 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controll.InserirHospede;
+import Controller.ControllHospede;
 
 public class MenuGerenciaHospede{
 
@@ -35,7 +35,7 @@ public class MenuGerenciaHospede{
                         System.out.print("Email do Hóspede: ");
                         String email = scanner.nextLine();
                         
-                        InserirHospede inserirHospede = new InserirHospede(cpf, nome, telefone, email);
+                        ControllHospede inserirHospede = new ControllHospede(cpf, nome, telefone, email);
                         break;
                     case 2: // Atualizar
                         

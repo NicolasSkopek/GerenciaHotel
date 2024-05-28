@@ -3,7 +3,7 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controll.InserirQuarto;
+import Controller.InserirQuarto;
 
 public class MenuGerenciaQuartos{
     static Scanner scanner = new Scanner(System.in);

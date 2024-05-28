@@ -8,13 +8,7 @@ import java.sql.SQLException;
 
 public class Main {
     public static void main(String[] args) {
-
         MenuPrincipal menuPrincipal = new MenuPrincipal();
-        MenuGerenciaHospede menuHospede = new MenuGerenciaHospede();
-        MenuGerenciaFuncionario menuFuncionario = new MenuGerenciaFuncionario();
-        MenuGerenciaQuartos menuQuartos = new MenuGerenciaQuartos();
-        MenuGerenciaReserva menuReserva = new MenuGerenciaReserva();
-        MenuGerenciaTipo menuTipo = new MenuGerenciaTipo();
 
         Connection conexao = null;
         try {

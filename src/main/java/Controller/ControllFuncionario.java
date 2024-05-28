@@ -1,4 +1,4 @@
-package Controll;
+package Controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,13 +7,13 @@ import java.sql.SQLException;
 import Model.Funcionario;
 import Model.DB.ConexaoBanco;
 
-public class InserirFuncionario {
+public class ControllFuncionario {
 
     private String cpf;
     private String nome;
     private String cargo;
 
-    public InserirFuncionario(String cpf, String nome, String cargo) {
+    public ControllFuncionario(String cpf, String nome, String cargo) {
         this.cpf = cpf;
         this.nome = nome;
         this.cargo = cargo;

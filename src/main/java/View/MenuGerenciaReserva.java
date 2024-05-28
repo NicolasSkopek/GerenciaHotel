@@ -3,7 +3,7 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controll.InserirReserva;
+import Controller.InserirReserva;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

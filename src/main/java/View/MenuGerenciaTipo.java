@@ -3,7 +3,7 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controll.InserirTipo;
+import Controller.InserirTipo;
 
 public class MenuGerenciaTipo{
     static Scanner scanner = new Scanner(System.in);

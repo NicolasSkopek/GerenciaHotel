@@ -3,7 +3,7 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Controll.InserirFuncionario;
+import Controller.ControllFuncionario;
 
 
 public class MenuGerenciaFuncionario{
@@ -33,7 +33,7 @@ public class MenuGerenciaFuncionario{
                         System.out.print("Cargo do Funcionário: ");
                         String cargo = scanner.nextLine();
                         
-                        InserirFuncionario inserirFuncionario = new InserirFuncionario(cpf, nome, cargo);
+                        ControllFuncionario inserirFuncionario = new ControllFuncionario(cpf, nome, cargo);
                         break;
                     case 2: // Atualizar
                         
