@@ -1,1 +1,0 @@
-Responsável pela parte visual e receber as entradas do usuário

@@ -1,1 +1,0 @@
-Responsável pela comunicação entre o model e view

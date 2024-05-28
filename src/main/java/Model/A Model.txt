@@ -1,4 +1,0 @@
-Responsável pela regra de negócios/funcionamento do código
-Enity = modelos para entidades
-DAO = Responsável pela conexão do BD e pelo CRUD do sistema
-Function(pode mudar caso haja um nome melhor) = Códigos relacionados ao funcionamento do sistema
