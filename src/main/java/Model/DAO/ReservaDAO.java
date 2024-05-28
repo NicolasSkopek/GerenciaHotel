@@ -2,6 +2,7 @@ package Model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Model.Reservas;
@@ -67,7 +68,33 @@ public class ReservaDAO implements IDAO<Reservas> {
 
     @Override
     public void listar(Connection conexao) {
-        // TODO Auto-generated method stub
+        String sql = "SELECT " +
+            "r.id_reserva, r.data_reserva, r.data_retirada, r.fk_hospede, r.fk_funcionario, r.status, " +
+            "q.num_quarto, t.descricao AS tipo_quarto " +
+            "FROM gerenciamento_de_reservas r " +
+            "INNER JOIN gerenciamento_de_quartos_da_reserva q ON r.id_reserva = q.fk_reserva " +
+            "INNER JOIN gerenciamento_de_tipos_de_quarto t ON q.fk_tipo = t.id_tipo";
+        
+        try (PreparedStatement preparedStatement = conexao.prepareStatement(sql)) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            while (resultSet.next()) {
+                int idReserva = resultSet.getInt("id_reserva");
+                String dataReserva = resultSet.getString("data_reserva");
+                String dataRetirada = resultSet.getString("data_retirada");
+                String hospede = resultSet.getString("fk_hospede");
+                String funcionario = resultSet.getString("fk_funcionario");
+                int status = resultSet.getInt("status");
+                int numQuarto = resultSet.getInt("num_quarto");
+                String tipoQuarto = resultSet.getString("tipo_quarto");
+
+                System.out.println("Reserva ID: " + idReserva + " | Data Reserva: " + dataReserva + 
+                                    " | Data Retirada: " + dataRetirada + " | Hóspede: " + hospede + 
+                                    " | Funcionário: " + funcionario + " | Status: " + status + 
+                                    " | Número do Quarto: " + numQuarto + " | Tipo de Quarto: " + tipoQuarto);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-    
 }

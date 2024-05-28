@@ -53,5 +53,18 @@ public static void inserirReserva() {
             e.printStackTrace();
         }
     }
+
+    public static void listarReservas(){
+            System.out.println("Lista de Reservas:");
+            try {
+                Connection conexao = ConexaoBanco.obterConexao();
+    
+                ReservaDAO reservaDAO = new ReservaDAO();
+                reservaDAO.listar(conexao);
+    
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+    }
 }
 
