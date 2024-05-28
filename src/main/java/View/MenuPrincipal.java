@@ -5,9 +5,15 @@ import java.util.Scanner;
 public class MenuPrincipal {
     static Scanner scanner = new Scanner(System.in);
 
-    private static int opcao = 0;
+    public int opcao = 0;
     
-    public static void Menu(){
+    MenuGerenciaHospede menuHospede = new MenuGerenciaHospede();
+    MenuGerenciaFuncionario menuFuncionario = new MenuGerenciaFuncionario();
+    MenuGerenciaQuartos menuQuartos = new MenuGerenciaQuartos();
+    MenuGerenciaReserva menuReserva = new MenuGerenciaReserva();
+    MenuGerenciaTipo menuTipo = new MenuGerenciaTipo();
+
+    public void Menu(){
 
         do{
             System.out.println("\n---- Gerenciamento do Hotel ----");
@@ -22,19 +28,19 @@ public class MenuPrincipal {
                 opcao = scanner.nextInt();
                 switch (opcao) {
                     case 1: // Gerenciamento de Hóspedes
-                        MenuGerenciaHospede.MenuHospede();
+                        menuHospede.Menu();
                         break;
                     case 2: // Gerenciamento de Funcionários
-                        MenuGerenciaFuncionario.MenuFuncionario();
+                        menuFuncionario.Menu();
                         break;
                     case 3: // Gerenciamento de Reservas
-                        MenuGerenciaReserva.MenuReserva();
+                        menuReserva.Menu();
                         break;
                     case 4: // Gerenciamento de Quarto
-                        MenuGerenciaQuartos.MenuQuarto();
+                        menuQuartos.Menu();
                         break;  
                     case 5: // Gerenciamento de Tipo do Quarto
-                        MenuGerenciaTipo.MenuTipo();
+                        menuTipo.Menu();
                         break;
                     case 0:
                         return;

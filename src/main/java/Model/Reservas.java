@@ -9,14 +9,16 @@ public class Reservas {
     private LocalDate dataRetirada;
     private String cpfHospede;
     private String cpfFuncionario;
+    private int status;
 
     public Reservas(int idReserva, LocalDate dataReserva, LocalDate dataRetirada, String cpfHospede,
-            String cpfFuncionario) {
+            String cpfFuncionario, int status) {
         this.idReserva = idReserva;
         this.dataReserva = dataReserva;
         this.dataRetirada = dataRetirada;
         this.cpfHospede = cpfHospede;
         this.cpfFuncionario = cpfFuncionario;
+        this.status = status;
     }
 
     public int getIdReserva() {
@@ -59,10 +61,14 @@ public class Reservas {
         this.cpfFuncionario = cpfFuncionario;
     }
 
-    
+    public int getStatus() {
+        return status;
+    }
 
-    
-    
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
 
 
 }

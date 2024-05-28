@@ -3,18 +3,17 @@ package View;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Controll.InserirReserva;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import Controll.InserirReserva;
-
-public class MenuGerenciaReserva {
+public class MenuGerenciaReserva extends MenuPrincipal{
 
     static Scanner scanner = new Scanner(System.in);
-
-    private static int opcao = 0;
     
-    public static void MenuReserva(){
+    @Override
+    public void Menu(){
 
         do{
             System.out.println("\n---- Gerenciamento de Reserva ----");
@@ -39,8 +38,12 @@ public class MenuGerenciaReserva {
                         String cpfHospede = scanner.nextLine();
                         System.out.print("CPF do Funcionário: ");
                         String cpfFuncionario = scanner.nextLine();
-                        
-                        InserirReserva InserirReserva = new InserirReserva(id, dataEntrada, dataRetirada, cpfHospede, cpfFuncionario);
+
+                        System.out.print("iD (0 - INATIVO / 1 - ATIVO): ");
+                        int status = scanner.nextInt();
+
+                                      
+                        InserirReserva InserirReserva = new InserirReserva(id, dataEntrada, dataRetirada, cpfHospede, cpfFuncionario, status);
                         break;
                     case 2: // Atualizar
                         
