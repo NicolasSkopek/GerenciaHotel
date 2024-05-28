@@ -28,19 +28,19 @@ public class MenuPrincipal {
                 opcao = scanner.nextInt();
                 switch (opcao) {
                     case 1: // Gerenciamento de Hóspedes
-                        menuHospede.Menu();
+                        menuHospede.menuHospede();
                         break;
                     case 2: // Gerenciamento de Funcionários
-                        menuFuncionario.Menu();
+                        menuFuncionario.menuFuncionario();
                         break;
                     case 3: // Gerenciamento de Reservas
-                        menuReserva.Menu();
+                        menuReserva.menuReserva();
                         break;
                     case 4: // Gerenciamento de Quarto
-                        menuQuartos.Menu();
+                        menuQuartos.menuQuarto();
                         break;  
                     case 5: // Gerenciamento de Tipo do Quarto
-                        menuTipo.Menu();
+                        menuTipo.menuTipo();
                         break;
                     case 0:
                         return;

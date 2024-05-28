@@ -5,12 +5,13 @@ import java.util.Scanner;
 
 import Controll.InserirHospede;
 
-public class MenuGerenciaHospede extends MenuPrincipal{
+public class MenuGerenciaHospede{
 
     static Scanner scanner = new Scanner(System.in);
     
-    @Override
-    public void Menu(){
+    public int opcao = 0;
+
+    public void menuHospede(){
 
         do{
             System.out.println("\n---- Gerenciamento de Hóspedes ----");

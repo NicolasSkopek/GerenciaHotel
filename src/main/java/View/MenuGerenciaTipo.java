@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 import Controll.InserirTipo;
 
-public class MenuGerenciaTipo extends MenuPrincipal{
+public class MenuGerenciaTipo{
     static Scanner scanner = new Scanner(System.in);
 
-    @Override
-    public void Menu(){
+    public int opcao = 0;
+    
+    public void menuTipo(){
         do{
             System.out.println("\n---- Gerenciamento de Tipos de Quarto ----");
             System.out.println("[1] - Inserir Dados do Tipo do Quarto");

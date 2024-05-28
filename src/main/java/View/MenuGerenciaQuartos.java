@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 import Controll.InserirQuarto;
 
-public class MenuGerenciaQuartos extends MenuPrincipal{
+public class MenuGerenciaQuartos{
     static Scanner scanner = new Scanner(System.in);
  
-    @Override
-    public void Menu(){
+    public int opcao = 0;
+    
+    public void menuQuarto(){
 
         do{
             System.out.println("\n---- Gerenciamento de Quartos ----");

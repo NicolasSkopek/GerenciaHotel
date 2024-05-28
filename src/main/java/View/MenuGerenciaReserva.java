@@ -8,12 +8,13 @@ import Controll.InserirReserva;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class MenuGerenciaReserva extends MenuPrincipal{
+public class MenuGerenciaReserva{
 
     static Scanner scanner = new Scanner(System.in);
     
-    @Override
-    public void Menu(){
+    public int opcao = 0;
+    
+    public void menuReserva(){
 
         do{
             System.out.println("\n---- Gerenciamento de Reserva ----");
