@@ -63,9 +63,9 @@ public class QuartoDAO implements IDAO<Quarto> {
     }
 
     @Override
-    public String listar(Quarto quarto, Connection conexao) {
+    public void listar(Connection conexao) {
         // TODO Auto-generated method stub
-        return null;
+
     }
     
 }

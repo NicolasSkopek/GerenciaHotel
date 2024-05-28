@@ -2,7 +2,9 @@ package Model.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import Model.Funcionario;
 
@@ -64,9 +66,26 @@ public class FuncionarioDAO implements IDAO<Funcionario> {
     }
 
     @Override
-    public String listar(Funcionario funcionario, Connection conexao) {
-        // TODO Auto-generated method stub
-        return null;
+    public void listar(Connection conexao) {
+        try {
+        Statement declaracao = conexao.createStatement();
+
+        String sql = "SELECT * FROM gerenciamento_de_funcionarios";
+        
+        ResultSet resultado = declaracao.executeQuery(sql);
+
+        while (resultado.next()) {
+            String cpf = resultado.getString("cpf");
+            String nome = resultado.getString("nome");
+            String cargo = resultado.getString("cargo");
+
+            System.out.println("\nID: " + cpf + " | Título: " + nome + " | Autor: " + cargo);
+        }
+        resultado.close();
+        declaracao.close();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
     }
     
 }

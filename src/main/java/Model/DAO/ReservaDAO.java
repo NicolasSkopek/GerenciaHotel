@@ -66,9 +66,8 @@ public class ReservaDAO implements IDAO<Reservas> {
     }
 
     @Override
-    public String listar(Reservas reserva, Connection conexao) {
+    public void listar(Connection conexao) {
         // TODO Auto-generated method stub
-        return null;
     }
     
 }

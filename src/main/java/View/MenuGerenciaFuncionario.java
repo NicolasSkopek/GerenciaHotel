@@ -18,7 +18,7 @@ public class MenuGerenciaFuncionario{
             System.out.println("[1] - Inserir Dados do Funcionário");
             System.out.println("[2] - Atuaizar Dados do Funcionário");
             System.out.println("[3] - Excluir Dados do Funcionário");
-            System.out.println("[4] - Exibir Dados do Funcionário");
+            System.out.println("[4] - Exibir Dados dos Funcionários");
             System.out.println("[0] - Voltar");
             System.out.print("Opcão: ");
             try{
@@ -34,7 +34,7 @@ public class MenuGerenciaFuncionario{
                         ControllFuncionario.excluirFuncionario();
                         break;
                     case 4: // Exibir
-                
+                        ControllFuncionario.listarFuncionarios();
                         break;
                     case 0:
                         return;

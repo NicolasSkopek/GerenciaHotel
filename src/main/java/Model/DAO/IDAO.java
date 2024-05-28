@@ -14,5 +14,5 @@ public interface IDAO<T> {
     
     String excluir(Connection conexao, int remov);
 
-    String listar(T entidade, Connection conexao);
+    void listar(Connection conexao);
 }

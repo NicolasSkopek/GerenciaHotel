@@ -43,4 +43,17 @@ public class ControllFuncionario {
             e.printStackTrace();
         }
     }
+
+    public static void listarFuncionarios(){
+        System.out.println("Lista de Funcionários:");
+        try {
+            Connection conexao = ConexaoBanco.obterConexao();
+
+            FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+            funcionarioDAO.listar(conexao);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

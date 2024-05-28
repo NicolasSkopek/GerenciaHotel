@@ -65,7 +65,7 @@ public class HospedeDAO implements IDAO<Hospede>{
     }
 
     @Override
-    public String listar(Hospede hospede, Connection conexao) {
+    public void listar(Connection conexao) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'listar'");
     }
