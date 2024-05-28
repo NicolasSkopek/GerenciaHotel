@@ -105,7 +105,7 @@ public class CriaTabela {
         conexao.createStatement().executeUpdate(
                 "CREATE TABLE gerenciamento_de_quartos_da_reserva(" +
                 "num_quarto INTEGER PRIMARY KEY," +
-                "fk_reserva INTEGER NOT NULL," +
+                "fk_reserva INTEGER," +
                 "fk_tipo INTEGER NOT NULL," +
                 "FOREIGN KEY (fk_reserva) REFERENCES gerenciamento_de_reservas(id_reserva)," +
                 "FOREIGN KEY (fk_tipo) REFERENCES gerenciamento_de_tipos_de_quarto(id_tipo)" +

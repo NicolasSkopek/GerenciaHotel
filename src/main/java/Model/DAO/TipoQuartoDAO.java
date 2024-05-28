@@ -34,17 +34,17 @@ public class TipoQuartoDAO implements IDAO<TipoQuarto>{
         try {
             String sql = "UPDATE gerenciamento_de_tipos_de_quarto SET descricao = ? WHERE id_tipo = ?";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
-            preparedStatement.setInt(1, tipoQuarto.getId());
-            preparedStatement.setString(2, tipoQuarto.getDescricao());
+            preparedStatement.setString(1, tipoQuarto.getDescricao());
+            preparedStatement.setInt(2, tipoQuarto.getId());
 
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {
-                return "Hospede atualizado com sucesso!";
+                return "Tipo do Quarto atualizado com sucesso!";
             } else {
-                return "Falha ao atualizar o hospede!";
+                return "Falha ao atualizar o tipo do quarto!";
             }
         } catch (SQLException ex) {
-            return "Ocorreu um erro ao atualizar o hospede: " + ex.getMessage();
+            return "Ocorreu um erro ao atualizar o tipo do quarto: " + ex.getMessage();
         }
     }
 
@@ -63,7 +63,7 @@ public class TipoQuartoDAO implements IDAO<TipoQuarto>{
     @Override
     public String excluir(Connection conexao, int remov) {
         try {
-            String sql = "DELETE FROM gerenciamento_de_reservas WHERE id_quarto = ?";
+            String sql = "DELETE FROM gerenciamento_de_tipos_de_quarto WHERE id_tipo = ?";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             preparedStatement.setInt(1, remov);
             int rowsAffected = preparedStatement.executeUpdate();

@@ -89,8 +89,8 @@ public class QuartoDAO implements IDAO<Quarto> {
 
         while (resultado.next()) {
             long id = resultado.getLong("num_quarto");
-            int idReserva = resultado.getInt("nome");
-            int tipo = resultado.getInt("cargo");
+            int idReserva = resultado.getInt("fk_reserva");
+            int tipo = resultado.getInt("fk_tipo");
 
             System.out.println("\nNumero do quarto: " + id + " | Id da reserva: " + idReserva + " | Tipo do quarto: " + tipo);
         }

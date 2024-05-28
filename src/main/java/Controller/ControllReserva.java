@@ -65,7 +65,7 @@ public static void inserirReserva() {
                 reservaDAO.listar(conexao);
     
             } catch (SQLException e) {
-                e.printStackTrace();
+                System.out.print(e.getMessage());
             }
     }
 

@@ -34,14 +34,14 @@ public class ReservaDAO implements IDAO<Reservas> {
     @Override
     public String atualizar(Reservas reserva, Connection conexao) {
         try {
-            String sql = "UPDATE gerenciamento_de_reservas SET data_reserva = ?, fk_hospede = ?, fk_funcionario = ?, status = ? WHERE id_reserva = ?";
+            String sql = "UPDATE gerenciamento_de_reservas SET data_reserva = ?, data_retirada = ?, fk_hospede = ?, fk_funcionario = ?, status = ? WHERE id_reserva = ?";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
-            preparedStatement.setInt(1, reserva.getIdReserva());
-            preparedStatement.setObject(2, reserva.getDataReserva());
-            preparedStatement.setObject(3, reserva.getDataRetirada());
-            preparedStatement.setString(4, reserva.getCpfHospede());
-            preparedStatement.setString(5, reserva.getCpfFuncionario());
-            preparedStatement.setInt(6, reserva.getStatus());
+            preparedStatement.setObject(1, reserva.getDataReserva());
+            preparedStatement.setObject(2, reserva.getDataRetirada());
+            preparedStatement.setString(3, reserva.getCpfHospede());
+            preparedStatement.setString(4, reserva.getCpfFuncionario());
+            preparedStatement.setInt(5, reserva.getStatus());
+            preparedStatement.setInt(6, reserva.getIdReserva());
 
             int rowsAffected = preparedStatement.executeUpdate();
             if (rowsAffected > 0) {

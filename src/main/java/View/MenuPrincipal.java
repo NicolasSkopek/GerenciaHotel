@@ -19,9 +19,9 @@ public class MenuPrincipal {
             System.out.println("\n---- Gerenciamento do Hotel ----");
             System.out.println("[1] - Gerenciamento de Hóspedes");
             System.out.println("[2] - Gerenciamento de Funcionários");
-            System.out.println("[3] - Gerenciamento de Reservas");
-            System.out.println("[4] - Gerenciamento de Quartos da Reserva");
-            System.out.println("[5] - Gerenciamento de Tipos de Quarto");
+            System.out.println("[3] - Gerenciamento de Tipos de Quarto");
+            System.out.println("[4] - Gerenciamento de Reservas");
+            System.out.println("[5] - Gerenciamento de Quartos da Reserva");
             System.out.println("[0] - Sair do Programa");
             System.out.print("Opcão: ");
             try{
@@ -33,13 +33,13 @@ public class MenuPrincipal {
                     case 2: // Gerenciamento de Funcionários
                         menuFuncionario.menuFuncionario();
                         break;
-                    case 3: // Gerenciamento de Reservas
+                    case 4: // Gerenciamento de Reservas
                         menuReserva.menuReserva();
                         break;
-                    case 4: // Gerenciamento de Quarto
+                    case 5: // Gerenciamento de Quarto
                         menuQuartos.menuQuarto();
                         break;  
-                    case 5: // Gerenciamento de Tipo do Quarto
+                    case 3: // Gerenciamento de Tipo do Quarto
                         menuTipo.menuTipo();
                         break;
                     case 0:
