@@ -26,7 +26,7 @@ public class MenuGerenciaTipo{
                         ControllTipo.inserirTipo();
                         break;
                     case 2: // Atualizar
-                        
+                        ControllTipo.atualizarTipo();
                         break;
                     case 3: // Excluir
                         ControllTipo.excluirTipo();

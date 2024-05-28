@@ -31,8 +31,21 @@ public class TipoQuartoDAO implements IDAO<TipoQuarto>{
 
     @Override
     public String atualizar(TipoQuarto tipoQuarto, Connection conexao) {
-        // TODO Auto-generated method stub
-        return null;
+        try {
+            String sql = "UPDATE gerenciamento_de_tipos_de_quarto SET descricao = ? WHERE id_tipo = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setInt(1, tipoQuarto.getId());
+            preparedStatement.setString(2, tipoQuarto.getDescricao());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                return "Hospede atualizado com sucesso!";
+            } else {
+                return "Falha ao atualizar o hospede!";
+            }
+        } catch (SQLException ex) {
+            return "Ocorreu um erro ao atualizar o hospede: " + ex.getMessage();
+        }
     }
 
     @Override

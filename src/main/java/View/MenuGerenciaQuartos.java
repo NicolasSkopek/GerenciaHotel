@@ -27,7 +27,7 @@ public class MenuGerenciaQuartos{
                         ControllQuarto.inserirQuarto();
                         break;
                     case 2: // Atualizar
-                        
+                        ControllQuarto.atualizarQuarto();
                         break;
                     case 3: // Excluir
                         ControllQuarto.excluirQuarto();

@@ -1,12 +1,16 @@
 package Controller;
 
+import Model.Reservas;
 import Model.TipoQuarto;
 import Model.DAO.FuncionarioDAO;
+import Model.DAO.ReservaDAO;
 import Model.DAO.TipoQuartoDAO;
 import Model.DB.ConexaoBanco;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class ControllTipo {
@@ -52,6 +56,28 @@ public class ControllTipo {
             TipoQuartoDAO tipoQuartoDAO = new TipoQuartoDAO();
             tipoQuartoDAO.listar(conexao);
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void atualizarTipo(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("ID do Tipo do Quarto que deseja editar: ");
+        int id = scanner.nextInt();
+
+        System.out.print("Nova Descrição: ");
+        scanner.nextLine();
+        String descricao = scanner.nextLine();
+        
+        TipoQuarto tipoQuartoAtualizado = new TipoQuarto(id, descricao);
+
+
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
+            TipoQuartoDAO tipoQuartoDAO = new TipoQuartoDAO();
+            String retorno = tipoQuartoDAO.atualizar(tipoQuartoAtualizado, conexao);
+            System.out.println(retorno);
         } catch (SQLException e) {
             e.printStackTrace();
         }

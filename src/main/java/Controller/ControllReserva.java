@@ -6,8 +6,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+import Model.Quarto;
 import Model.Reservas;
 import Model.DAO.FuncionarioDAO;
+import Model.DAO.QuartoDAO;
 import Model.DAO.ReservaDAO;
 import Model.DB.ConexaoBanco;
 
@@ -65,6 +67,36 @@ public static void inserirReserva() {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+    }
+
+    public static void atualizarReserva(){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Digite o id da reserva que deseja editar:");
+        int idReserva = scanner.nextInt();
+        
+        System.out.print("Nova Data de entrada: ");
+        LocalDate dataEntrada = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        System.out.print("Nova Data de retirada: ");
+        LocalDate dataRetirada = LocalDate.parse(scanner.next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        System.out.print("Novo CPF do Hóspede: ");
+        scanner.nextLine();
+        String cpfHospede = scanner.nextLine();
+        System.out.print("Novo CPF do Funcionário: ");
+        String cpfFuncionario = scanner.nextLine();
+        System.out.print("Novo iD (0 - INATIVO / 1 - ATIVO): ");
+        int status = scanner.nextInt();
+
+        Reservas reservasAtualizado = new Reservas(idReserva, dataEntrada, dataRetirada, cpfHospede, cpfFuncionario, status);
+
+
+        try (Connection conexao = ConexaoBanco.obterConexao()) {
+            ReservaDAO reservaDAO = new ReservaDAO();
+            String retorno = reservaDAO.atualizar(reservasAtualizado, conexao);
+            System.out.println(retorno);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
 

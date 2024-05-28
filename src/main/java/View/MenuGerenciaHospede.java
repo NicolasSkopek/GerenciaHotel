@@ -28,7 +28,7 @@ public class MenuGerenciaHospede{
                         ControllHospede.inserirHospede();
                         break;
                     case 2: // Atualizar
-                        
+                        ControllHospede.atualizarHospede();
                         break;
                     case 3: // Excluir
                         ControllHospede.excluirHospede();

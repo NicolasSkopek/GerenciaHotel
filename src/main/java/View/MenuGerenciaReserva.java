@@ -28,7 +28,7 @@ public class MenuGerenciaReserva{
                         ControllReserva.inserirReserva();
                         break;
                     case 2: // Atualizar
-                        
+                        ControllReserva.atualizarReserva();
                         break;
                     case 3: // Excluir
                         ControllReserva.excluirReserva();

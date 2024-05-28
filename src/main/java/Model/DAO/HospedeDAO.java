@@ -33,8 +33,23 @@ public class HospedeDAO implements IDAO<Hospede>{
 
     @Override
     public String atualizar(Hospede hospede, Connection conexao) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
+        try {
+            String sql = "UPDATE gerenciamento_de_hospedes SET nome = ?, telefone = ?, email = ? WHERE cpf = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setString(1, hospede.getNome());
+            preparedStatement.setString(2, hospede.getTelefone());
+            preparedStatement.setString(3, hospede.getEmail());
+            preparedStatement.setString(4, hospede.getCpf());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                return "Hospede atualizado com sucesso!";
+            } else {
+                return "Falha ao atualizar o hospede!";
+            }
+        } catch (SQLException ex) {
+            return "Ocorreu um erro ao atualizar o hospede: " + ex.getMessage();
+        }
     }
 
     @Override

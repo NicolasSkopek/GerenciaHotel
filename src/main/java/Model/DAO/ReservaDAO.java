@@ -33,8 +33,25 @@ public class ReservaDAO implements IDAO<Reservas> {
 
     @Override
     public String atualizar(Reservas reserva, Connection conexao) {
-        // TODO Auto-generated method stub
-        return null;
+        try {
+            String sql = "UPDATE gerenciamento_de_reservas SET data_reserva = ?, fk_hospede = ?, fk_funcionario = ?, status = ? WHERE id_reserva = ?";
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.setInt(1, reserva.getIdReserva());
+            preparedStatement.setObject(2, reserva.getDataReserva());
+            preparedStatement.setObject(3, reserva.getDataRetirada());
+            preparedStatement.setString(4, reserva.getCpfHospede());
+            preparedStatement.setString(5, reserva.getCpfFuncionario());
+            preparedStatement.setInt(6, reserva.getStatus());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                return "Hospede atualizado com sucesso!";
+            } else {
+                return "Falha ao atualizar o hospede!";
+            }
+        } catch (SQLException ex) {
+            return "Ocorreu um erro ao atualizar o hospede: " + ex.getMessage();
+        }
     }
 
     @Override
